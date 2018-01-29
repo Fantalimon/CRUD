@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <h3>My tasks</h3>
-        <a href="#" class="btn btn-success">Create</a>
+        <a href="{{route('tasks.create')}}" class="btn btn-success">Create</a>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <table class="table">
