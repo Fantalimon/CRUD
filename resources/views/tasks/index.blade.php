@@ -20,10 +20,13 @@
                             <td>{{$task->id}}</td>
                             <td>{{$task->title}}</td>
                             <td>
-                                <a href="#"><i class="glyphicon glyphicon-eye-open"></i></a>
+                                <a href="{{route('tasks.show',$task->id)}}"><i class="glyphicon glyphicon-eye-open"></i></a>
                                 <a href="{{route('tasks.edit',$task->id)}}"><i class="glyphicon glyphicon-edit"></i></a>
-                                <a href="#"><i class="glyphicon glyphicon-remove"></i></a>
-
+                                {!! Form::open(['method'=>'DELETE',
+                                'route'=>['tasks.destroy',$task->id]
+                                ]) !!}
+                                <button onclick="return confirm('Действительно Удалить задачу?')"><i class="glyphicon glyphicon-remove"></i></button>
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                     @endforeach
