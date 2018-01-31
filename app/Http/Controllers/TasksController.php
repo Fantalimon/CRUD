@@ -5,13 +5,11 @@ use App\Task;
 use App\Http\Requests\createTaskRequest;
 use Illuminate\Http\Request;
 
-
 class TasksController extends Controller
 {
-
-
     public function index () {
-        return view('tasks.index');
+        $tasks = Task::all();
+        return view('tasks.index', ['tasks' => $tasks]);
     }
 
     public function create () {
@@ -19,15 +17,26 @@ class TasksController extends Controller
     }
 
     public function store (createTaskRequest $request) {
-/*long way add to db*/
-//        $this->validate($request, ['title' => 'required', 'descriptions' => 'required']);
-//        $task=new Task();
-//        $task->fill($request->all());
-//        $task->save();
-
-
+        /*long way add to db*/
+        //        $this->validate($request, ['title' => 'required', 'descriptions' => 'required']);
+        //        $task=new Task();
+        //        $task->fill($request->all());
+        //        $task->save();
         Task::create($request->all());
 
+        return redirect()->route('tasks.index');
+    }
+
+    public function edit ($id) {
+        $myTask = Task::find($id);
+
+        return view('tasks.edit', ['task' => $myTask]);
+    }
+
+    public function update (Request $request, $id) {
+        $this->validate($request, ['title'=>'required','descriptions'=>'required']);
+        $myTask = Task::find($id);
+        $myTask->update($request->all());
         return redirect()->route('tasks.index');
     }
 }
