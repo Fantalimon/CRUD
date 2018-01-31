@@ -8,6 +8,9 @@
     <title>CRUD</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
+        h1 {padding: 0px;}
+        h2 {padding-left: 20px;}
+
         form{
             display: inline;
         }
@@ -25,8 +28,21 @@
 </head>
 <body>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="menu">
 
-@yield('content')
+            <h1>Добро пожаловать в наш задачник. </h1>
+
+              <h2>Надеюсь он работает и вам понравится</h2>
+
+            </ul>
+                <hr>
+            <a href="{{route('tasks.index')}}" class="btn btn-success">Начать смотреть задания</a>
+        </div>
+    </div>
+</div>
 
 
 </body>
