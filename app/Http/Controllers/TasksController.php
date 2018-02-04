@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Task;
 use App\Http\Requests\createTaskRequest;
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class TasksController extends Controller
 {
@@ -23,7 +24,6 @@ class TasksController extends Controller
         //        $task->fill($request->all());
         //        $task->save();
         Task::create($request->all());
-
         return redirect()->route('tasks.index');
     }
 
@@ -41,8 +41,8 @@ class TasksController extends Controller
     }
 
     public function show ($id) {
-$myTask=Task::find($id);
 
+$myTask=Task::find($id);
 return view('tasks.show',['task'=>$myTask]);
     }
 
@@ -50,4 +50,6 @@ return view('tasks.show',['task'=>$myTask]);
         Task::find($id)->delete();
         return redirect()->route('tasks.index');
     }
+
+
 }

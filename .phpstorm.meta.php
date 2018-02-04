@@ -138,6 +138,7 @@ namespace PHPSTORM_META {
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'qrcode' => \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
@@ -269,6 +270,7 @@ namespace PHPSTORM_META {
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'qrcode' => \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
@@ -400,6 +402,7 @@ namespace PHPSTORM_META {
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'qrcode' => \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::class,
     ]));
     override(\App::make(0), map([
         '' => '@',
@@ -531,6 +534,7 @@ namespace PHPSTORM_META {
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'qrcode' => \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::class,
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
@@ -662,6 +666,7 @@ namespace PHPSTORM_META {
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'qrcode' => \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::class,
     ]));
     override(\app(0), map([
         '' => '@',
@@ -793,6 +798,7 @@ namespace PHPSTORM_META {
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'qrcode' => \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::class,
     ]));
     override(\resolve(0), map([
         '' => '@',
@@ -924,6 +930,7 @@ namespace PHPSTORM_META {
         'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'qrcode' => \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::class,
     ]));
 
     override(\Illuminate\Support\Arr::add(0), type(0));
