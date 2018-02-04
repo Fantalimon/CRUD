@@ -181,6 +181,11 @@ return [
          *forms pagege
          * */
         Collective\Html\HtmlServiceProvider::class,
+
+      /*
+       * ide helper install with composer : composer require barryvdh/laravel-ide-helper
+       * */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
     ],
 
     /*
