@@ -24,6 +24,7 @@ class TasksController extends Controller
         //        $task->fill($request->all());
         //        $task->save();
         Task::create($request->all());
+
         return redirect()->route('tasks.index');
     }
 
