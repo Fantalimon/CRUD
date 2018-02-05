@@ -11,6 +11,8 @@
                 <p>
                     {{$task->descriptions}};
                 </p>
+                <hr>
+                <img src="{{$task->qrsrc}}">
             </div>
         </div>
     </div>

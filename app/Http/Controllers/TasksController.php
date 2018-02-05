@@ -10,6 +10,7 @@ class TasksController extends Controller
 {
     public function index () {
         $tasks = Task::all();
+
         return view('tasks.index', ['tasks' => $tasks]);
     }
 
@@ -23,8 +24,11 @@ class TasksController extends Controller
         //        $task=new Task();
         //        $task->fill($request->all());
         //        $task->save();
-        Task::create($request->all());
 
+        $qr=QrCode::format('png')->size('180')->errorCorrection('H')->encoding('UTF-8')->generate('task code','qrcode/'.md5(time()).'.png');
+
+        array_push($request, $qr);
+        Task::create($request->all());
         return redirect()->route('tasks.index');
     }
 
@@ -35,22 +39,22 @@ class TasksController extends Controller
     }
 
     public function update (Request $request, $id) {
-        $this->validate($request, ['title'=>'required','descriptions'=>'required']);
+        $this->validate($request, ['title' => 'required', 'descriptions' => 'required']);
         $myTask = Task::find($id);
         $myTask->update($request->all());
+
         return redirect()->route('tasks.index');
     }
 
     public function show ($id) {
+        $myTask = Task::find($id);
 
-$myTask=Task::find($id);
-return view('tasks.show',['task'=>$myTask]);
+        return view('tasks.show', ['task' => $myTask]);
     }
 
-    public function destroy($id){
+    public function destroy ($id) {
         Task::find($id)->delete();
+
         return redirect()->route('tasks.index');
     }
-
-
 }
